@@ -31,8 +31,6 @@ pythonproject3/                # Django项目根目录
 │   ├── tests.py               # 单元测试文件
 │   └── views.py               # 视图函数，接收请求、处理业务逻辑、返回页面
 └── db.sqlite3                 # sqlite3数据库文件（Django默认数据库）
-
-文件	       作用
 settings.py	项目最重要配置，注册 app01、配置 templates 模板路径、static 静态文件路径、数据库连接
 urls.py	项目总路由，把浏览器 url 请求分发到 app01 的路由
 wsgi.py	用于线上部署，web 服务器对接 Django
