@@ -1,32 +1,40 @@
-pythonproject3/                # Django项目根目录
-├── pythonproject3/            # 项目核心配置目录（和项目同名）
-│   ├── __init__.py
-│   ├── asgi.py                # ASGI异步服务配置文件
-│   ├── settings.py            # 项目全局配置：注册app、静态文件、数据库、模板等
-│   ├── urls.py                # 项目总路由，分发请求到各个app
-│   └── wsgi.py                # WSGI web服务部署配置
-├── app01/                     # Django应用 app01
-│   ├── migrations/            # 数据库迁移文件目录
-│   │   ├── 0001_initial.py    # 第一次迁移，生成数据表脚本
-│   │   ├── 0002_departme.py   # 第二次迁移，新增/修改表结构脚本
-│   │   └── __init__.py
-│   ├── static/                # app内静态资源目录（css/js/img/插件）
-│   │   ├── css/               # 样式表文件
-│   │   ├── img/               # 图片资源
-│   │   ├── js/                # javascript脚本
-│   │   └── plugins/           # 第三方插件
-│   ├── templates/             # app内HTML模板文件夹
-│   │   ├── info_add.html      # 信息新增页面
-│   │   ├── info_list.html     # 信息列表页面
-│   │   ├── login.html         # 登录页面
-│   │   ├── tpl.html           # 公共基础模板（一般用于页面继承）
-│   │   ├── user_add.html      # 用户新增页面
-│   │   ├── user_list.html     # 用户列表页面
-│   │   └── weather.html       # 天气页面
-│   ├── __init__.py
-│   ├── admin.py               # Django后台管理站点配置
-│   ├── apps.py                # app应用配置信息
-│   ├── models.py              # 数据模型，定义数据库表结构
-│   ├── tests.py               # 单元测试文件
-│   └── views.py               # 视图函数，接收请求、处理业务逻辑、返回页面
-└── db.sqlite3                 # sqlite3数据库文件（Django默认数据库）
+# PythonProject3 (Django Web 应用)
+
+这是一个基于 Python 和 Django 框架开发的 Web 应用程序。项目包含基础的用户管理、信息管理以及天气查询等功能模块，前端使用了 Bootstrap 进行页面布局和美化。
+
+## 📌 项目简介
+
+该项目采用经典的 Django MVT（Model-View-Template）架构，目前主要包含一个名为 `app01` 的核心应用。功能涵盖了用户的登录、用户信息的增删改查（CRUD）、常规信息的添加与展示，以及天气数据的展示。
+
+## 🛠 技术栈
+
+*   **后端语言:** Python 3.x
+*   **Web 框架:** Django
+*   **数据库:** SQLite3 (默认开发数据库)
+*   **前端框架/库:** HTML, CSS, JavaScript, Bootstrap 3
+
+## 📂 目录结构说明
+
+```text
+pythonproject3/
+├── app01/                      # 核心应用目录
+│   ├── migrations/             # 数据库迁移文件目录
+│   ├── static/                 # 静态资源文件 (CSS, JS, 图片, 第三方插件)
+│   │   └── plugins/bootstrap-3 # 引入的 Bootstrap 3 前端框架
+│   ├── templates/              # HTML 模板文件
+│   │   ├── login.html          # 登录页面
+│   │   ├── user_*.html         # 用户管理相关页面
+│   │   ├── info_*.html         # 信息管理相关页面
+│   │   └── weather.html        # 天气展示页面
+│   ├── admin.py                # Django Admin 后台配置
+│   ├── apps.py                 # 应用配置
+│   ├── models.py               # 数据库模型定义 (ORM)
+│   ├── tests.py                # 单元测试
+│   └── views.py                # 视图函数 (业务逻辑处理)
+├── pythonproject3/             # 项目主配置目录
+│   ├── settings.py             # 项目全局设置 (数据库、应用注册、中间件等)
+│   ├── urls.py                 # 项目主路由配置
+│   ├── asgi.py                 # ASGI 部署配置
+│   └── wsgi.py                 # WSGI 部署配置
+├── db.sqlite3                  # SQLite 数据库文件
+└── manage.py                   # Django 命令行管理工具
